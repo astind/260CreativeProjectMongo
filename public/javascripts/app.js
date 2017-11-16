@@ -35,5 +35,38 @@ angular.module('todo', [])
       });
     };
 
+    $scope.delete = function(item) {
+      $http.delete('/todo/' + item._id)
+	.success(function(data) {
+	  console.log("delete worked");
+	});
+      $scope.getList();
+    };
+    $scope.getList();
+   
+    $scope.uppriority = function(item) {
+      return $http.put('/todo/' + item._id + '/uppriority')
+	.success(function(data) {
+	  console.log("UP worked");
+	  item.priority += 1;
+	});
+    };
+
+    $scope.incrementPriority = function(item) {
+	$scope.uppriority(item);
+    };    
+    
+    $scope.downpriority = function(item) {
+      return $http.put('/todo/' + item._id + '/downpriority')
+        .success(function(data) {
+	  console.log("down worked!");
+	  item.priority -= 1;
+        });
+    };
+
+    $scope.decrementPriority = function(item) {
+	$scope.downpriority(item);
+    };
+
   }
 ]);

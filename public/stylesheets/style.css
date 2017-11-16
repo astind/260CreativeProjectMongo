@@ -6,3 +6,96 @@ body {
 a {
   color: #00B7FF;
 }
+
+.header {
+
+}
+
+.info {
+
+}
+
+.user {
+
+}
+
+.addr {
+
+}
+
+.list {
+  margin: 20px;
+}
+
+.item-low {
+  background-color: green;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.item-low p {
+  margin: 5px;
+  font-size: 35px;
+}
+
+.item-low img {
+  margin-right: 30px
+}
+
+.item-medium {
+  background-color: yellow;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 10px; 
+  text-align: center;
+}
+
+.item-medium p {
+  margin: 5px;
+  font-size: 35px;
+}
+
+.item-medium img {
+  margin-right: 30px
+}
+
+.item-high {
+  background-color: orange;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.item-high p {
+  margin: 5px;
+  font-size: 35px;
+}
+
+.item-high img {
+  margin-right: 30px
+}
+
+.item-veryhigh {
+  background-color: red;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.item-veryhigh p {
+  margin: 5px;
+  font-size: 35px;
+}
+
+.item-veryhigh img {
+  margin-right: 30px
+}
+
+
+
+
+
