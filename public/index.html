@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>ToDo!</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="javascripts/app.js"></script>
+</head>
+<body ng-app="todo" ng-controller="MainCtrl">
+
+  <div class='login'>
+    <form ng-submit="getList()">
+      <input type="text" ng-model="userName"></input>
+      <button type="submit">Get List</button>
+    </form>
+
+    <form ng-submit="addItem()">
+      <input type="text" ng-model="item"></input>
+      <button type="submit">Add item</button>
+    </form>
+  </div>
+
+  <div ng-repeat="item in todo | orderBy: '-priority'">
+     {{item.item}} - priority: {{item.priority}}
+  </div>
+
+</body>
+</html>
