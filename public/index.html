@@ -11,29 +11,30 @@
     <h1> Manage Your To Do List </h1>
   </div>
 
-  <div class="info">
-    <p> Insert your Username below. If your have a list it will show up</p>
-    <p> If not, then create a list by filling in the Username and Item boxes </p> 
-  </div>
+  <div class="top">
+    <div class="info">
+      <p> Insert your Username below to find your list</p>
+      <p> Or set a Username and add items to a new list </p> 
+    </div>
 
-  <div class='user'>
-    <form ng-keyup="getList()">
-      <input type="text" ng-model="userName" placeholder="Username"></input>
-    </form> 
-    <p>Leave username in box</p>
-  </div>
+    <div class='user'>
+      <form ng-keyup="getList()">
+        <input type="text" ng-model="userName" placeholder="Username"></input>
+      </form> 
+      <p>(Leave username in the box)</p>
+    </div>
 
-  <div class='addr'>
-    <form ng-submit="addItem()">
-      <input type="text" ng-model="item" placeholder="New Item"></input>
-      <button type="submit">Add item</button>
-    </form>
+    <div class='addr'>
+      <form ng-submit="addItem()">
+        <input type="text" ng-model="item" placeholder="New Item"></input><br>
+        <button type="submit">Add item</button>
+      </form>
+    </div>
   </div>
 
   <div class="list" ng-repeat="item in todo | orderBy: '-priority'">
     <div ng-class="{'item-low': item.priority <= 0, 'item-medium': item.priority >= 1 && item.priority <= 5, 'item-high': item.priority >= 6 && item.priority <= 10, 'item-veryhigh': item.priority >= 11}">
       <p>{{item.item}} - priority: {{item.priority}}</p>
-      <br>
       <img id="delete" ng-click="delete(item)" src="https://image.flaticon.com/icons/png/128/121/121113.png" width="42">
       <img id="up" ng-click="incrementPriority(item)" src ="https://image.flaticon.com/icons/png/512/23/23714.png" width="42">
       <img id="down" ng-click="decrementPriority(item)" src="https://image.flaticon.com/icons/svg/24/24567.svg" width="42">
