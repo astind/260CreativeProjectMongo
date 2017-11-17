@@ -4,13 +4,20 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="javascripts/app.js"></script>
-</head>
-<body ng-app="todo" ng-controller="MainCtrl">
+</head><title>User TODO list</title>
+<body ng-app="todo" ng-controller="MainCtrl" style="
+background-image: url('https://images3.alphacoders.com/830/thumb-1920-83097.jpg');
+color: white;
+	">
 
   <div class="header">
-    <h1> Manage Your To Do List </h1>
+    <h1 style="
+		font-size: 100px;
+		text-align: center;
+		text-shadow: 2px 2px black;"> Manage Your To Do List </h1>
   </div>
 
+<<<<<<< HEAD
   <div class="top">
     <div class="info">
       <p> Insert your Username below to find your list</p>
@@ -30,7 +37,41 @@
         <button type="submit">Add item</button>
       </form>
     </div>
+=======
+  <div class="info">
+     
   </div>
+
+  <div class='user' style="
+                margin: 0 auto;
+                width: 500px;
+                hieght: 500px;
+                background-color: white;
+                border-radius: 25px;
+		padding-top: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+		border: 1px solid black;
+		font-size: 25px;
+		color: black;
+                 ">
+
+    <p> Insert your Username below. If your have a list it will show up</p>
+    <form ng-keyup="getList()">
+      <input type="text" ng-model="userName" placeholder="Username"></input>
+    </form> 
+    <p>Leave username in box</p>
+	 <div class='addr'>
+    <form ng-submit="addItem()">
+      <input type="text" ng-model="item" placeholder="New Item"></input>
+      <button type="submit">Add item</button>
+    </form>
+>>>>>>> master
+  </div>
+
+  </div>
+
 
   <div class="list" ng-repeat="item in todo | orderBy: '-priority'">
     <div ng-class="{'item-low': item.priority <= 0, 'item-medium': item.priority >= 1 && item.priority <= 5, 'item-high': item.priority >= 6 && item.priority <= 10, 'item-veryhigh': item.priority >= 11}">
